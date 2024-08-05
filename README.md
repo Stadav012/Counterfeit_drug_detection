@@ -45,7 +45,7 @@ Due to high RAM requirements, the app is deployed on Google Colab rather than ot
 
 ## YouTube Link
 
-*(Add your YouTube link here)*
+*https://youtu.be/TQqqoOqOkps*
 
 ## License
 
