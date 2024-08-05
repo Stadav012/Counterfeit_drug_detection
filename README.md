@@ -23,6 +23,8 @@ The text generation pipeline was used to ask questions like “What is a large l
 To store our new Llama-2-7b-chat-finetune model, the base model was reloaded in FP16 precision, and the left library was used to merge everything.
 We then reloaded the tokenizer since our weights were merged and pushed everything to Huggining Face Hub to save the model.
 
+In the final project app file uploaded on githhub you would be able to run the code  and see the interface where you can enter the smiles, inchi, hbd and logp and have the model predict the drug, give the confidence score and use it to make an informed decision. We could not deploy it on other platforms like streamlit and so on because of the large requirement of RAM required to deploy it hence the reason why it is deployed on colab. 
+
 
 
 
