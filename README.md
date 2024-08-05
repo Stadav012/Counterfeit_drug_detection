@@ -1,38 +1,52 @@
-# Counterfeit_drug_detection
-Link to dataset 
-https://drive.google.com/file/d/1EARQOE5VLyioLl63Axk1aAgRgN6C-07b/view?usp=sharing
+# Counterfeit Drug Detection
 
-Link for the app
-https://colab.research.google.com/drive/1RBw-F2QP3NzZ3tVmJwKKJxNe5EL3AMDs?usp=sharing#scrollTo=4VP-KcQDQ6po
-
-
-Youtube link
-
-
+## Overview
 
 Counterfeit drugs pose a severe threat to public health, leading to ineffective treatments, increased resistance to genuine medications, and significant economic losses. These fake medications undermine trust in healthcare systems and can result in life-threatening consequences for patients.
-Our project focused on detecting counterfeit drugs using a confidence score. The user needs to enter information for smiles, inchi, hydrogen bond donors, and logp, and based on this information, the model then predicts the drug with the confidence score. Based on how high or low the confidence score is, users can then make an informed decision about the authenticity of the drug. 
 
-To achieve this, we started by installing the required packages and libraries. 
-Then, we loaded our dataset and went through the preprocessing processes to prepare the data for training.
-Our focus was to identify counterfeit anti-malaria drugs, so we had to filter the dataset to ensure that the drugs it contains are only antimalaria drugs before continuing with the other processes. 
-We achieved this by creating a vocabulary for the malaria drugs. We matched the drugs to see if they contained any malaria-related words in the vocabulary and filtered the data frame. 
+Our project focuses on detecting counterfeit drugs using a confidence score. Users need to enter information such as SMILES, InChI, hydrogen bond donors (HBD), and LogP. Based on this information, the model predicts the drug with a confidence score. Users can then make informed decisions about the authenticity of the drug based on the confidence score.
 
-Then, we loaded the llama-2-7b-chat-hf model (chat model) directly in 4-bit precision using the NF4 type and trained it for one epoch on the mlabonne/guanaco-llama2-1k (1,000 samples).
-We then loaded the configurations for QLoRA and regular training parameters and passed everything to the SFTTrainer.
-Then, the fine-tuning began. 
-We needed parameter-efficient fine-tuning (PEFT) techniques like LoRA or QLoRA. To drastically reduce the VRAM usage, we fine-tuned the model in 4-bit precision, using QLoRA.
-The text generation pipeline was used to ask questions like “What is a large language model?” To format the input to match the Llama 2 prompt template.
+## Dataset
 
-To store our new Llama-2-7b-chat-finetune model, the base model was reloaded in FP16 precision, and the left library was used to merge everything.
-We then reloaded the tokenizer since our weights were merged and pushed everything to Huggining Face Hub to save the model.
+- [Link to Dataset](https://drive.google.com/file/d/1EARQOE5VLyioLl63Axk1aAgRgN6C-07b/view?usp=sharing)
 
-In the final project app file uploaded on githhub you would be able to run the code  and see the interface where you can enter the smiles, inchi, hbd and logp and have the model predict the drug, give the confidence score and use it to make an informed decision. We could not deploy it on other platforms like streamlit and so on because of the large requirement of RAM required to deploy it hence the reason why it is deployed on colab. 
+## App
 
+- [Link to the App](https://colab.research.google.com/drive/1RBw-F2QP3NzZ3tVmJwKKJxNe5EL3AMDs?usp=sharing#scrollTo=4VP-KcQDQ6po)
 
+## How It Works
 
+1. **Installation**: Install the required packages and libraries.
+2. **Data Loading**: Load and preprocess the dataset for training.
+3. **Data Filtering**: Filter the dataset to include only anti-malaria drugs.
+4. **Model Training**:
+   - Create a vocabulary for malaria drugs.
+   - Match and filter the drugs based on the vocabulary.
+   - created input and output columns based on following llama2 prompt templates
+   - Load the Llama-2-7b-chat-hf model in 4-bit precision using NF4 type.
+   - Train the model for five epochs.
+   - Use parameter-efficient fine-tuning techniques like LoRA or QLoRA.
+   - Fine-tune the model in 4-bit precision with QLoRA to reduce VRAM usage.
+   - Use the text generation pipeline to format the input and ask questions.
 
+5. **Model Storage**:
+   - Reload the base model in FP16 precision.
+   - Merge everything using the left library.
+   - Reload the tokenizer and pushed everything to Hugging Face Hub.
 
+## Usage
 
+In the final project app (linked above), you can:
+- Enter SMILES, InChI, HBD, and LogP values.
+- See the model's prediction and confidence score.
+- Make an informed decision about the authenticity of the drug.
 
+Due to high RAM requirements, the app is deployed on Google Colab rather than other platforms like Streamlit.
 
+## YouTube Link
+
+*(Add your YouTube link here)*
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
