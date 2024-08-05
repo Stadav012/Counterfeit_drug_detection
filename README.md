@@ -1,4 +1,7 @@
 # Counterfeit_drug_detection
+Link to dataset 
+https://drive.google.com/file/d/1EARQOE5VLyioLl63Axk1aAgRgN6C-07b/view?usp=sharing
+
 Youtube link
 
 
