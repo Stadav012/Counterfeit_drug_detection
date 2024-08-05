@@ -2,6 +2,10 @@
 Link to dataset 
 https://drive.google.com/file/d/1EARQOE5VLyioLl63Axk1aAgRgN6C-07b/view?usp=sharing
 
+Link for the app
+https://colab.research.google.com/drive/1RBw-F2QP3NzZ3tVmJwKKJxNe5EL3AMDs?usp=sharing#scrollTo=4VP-KcQDQ6po
+
+
 Youtube link
 
 
